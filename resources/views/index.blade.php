@@ -72,6 +72,7 @@ https://templatemo.com/tm-546-sixteen-clothing
 
     <!-- Page Content -->
     <!-- Banner Starts Here -->
+    <h1>{{$id}}</h1>
     <div class="banner header-text">
       <div class="owl-banner owl-carousel">
         <div class="banner-item-01">

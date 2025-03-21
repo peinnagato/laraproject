@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\TestController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,3 +33,5 @@ Route::get('/products', function () {
     return "<h1>Page not Found </h1>";
 
  });
+
+ Route::get('/test/{id}',[TestController::class,'index']);
