@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\TestController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -49,5 +49,6 @@ Route::get('/contact', function () {
     return view('/admin/404');
 
  });
+
  Route::get('/showuser',[UserController::class,'showUser']);
  Route::get('/singleuser/{id}',[UserController::class,'singleUser'])->name('view.user');
