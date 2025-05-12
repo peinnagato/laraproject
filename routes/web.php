@@ -2,32 +2,52 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/products/{id}',[MainController::class,'product']);
 Route::get('/products', function () {
     return view('products');
 });
+Route::get('/about', function () {
+   return view('about');
+});
+Route::get('/contact', function () {
+   return view('contact');
+});
 
- Route::get('/index',[MainController::class,'index']);
+// Routing through Controller
+ Route::get('/index',[TestController::class,'index']);
+
+//  Routing through controller Group
+//  Route::controller(MainController::class)->group(function(){
+//    Route::get('/index','index');
+//    Route::get('/products/{id}','product');
+//  });
+
 
  Route::get('/raj-tamang',function(){
     return view('contact');
  });
- Route::get('/admin/index', function(){
-    return view('admin/index');
- });
+ 
  Route::prefix('admin')->group(function(){
 
     Route::get('/index', function(){
         return view('admin.index');
      });
-     Route::get('/flag', function(){
-        return view('admin.flag');
+     Route::get('/table', function(){
+        return view('admin.table');
      });
+     Route::post('/addproduct',[MainController::class,'addProductController']);
+     Route::get('/addproduct', function(){
+         return view('admin.addproduct');
+      });
  });
  Route::fallback(function(){
-    return "<h1>Page not Found </h1>";
+    return view('/admin/404');
 
  });
+ Route::get('/showuser',[UserController::class,'showUser']);
+ Route::get('/singleuser/{id}',[UserController::class,'singleUser'])->name('view.user');
