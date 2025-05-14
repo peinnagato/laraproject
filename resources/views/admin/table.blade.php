@@ -11,48 +11,30 @@
               <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>All Users Data</h4>
+                    <h4>All Users Data <a href={{url('/adduser')}} class="btn btn-action btn-primary">Add New User</a></h4>
+                    
                   </div>
                   <div class="card-body p-0">
                     <div class="table-responsive">
                       <table class="table table-striped">
                         <tr>
-                          <th>#</th>
+                          <th>ID</th>
                           <th>Name</th>
                           <th>Created At</th>
-                          <th>Status</th>
+                          <th>Email</th>
                           <th>Action</th>
                         </tr>
                          @foreach($users as $id => $user)
                         <tr>
                           <td>{{$user -> id}}</td>
                           <td>{{$user->name}}</td>
-                          <td>2017-01-09</td>
-                          <td><div class="badge badge-success">Active</div></td>
+                          <td>{{$user->created_at}}</td>
+                          <td>{{$user->email}}</td>
                           <td><a href={{route('view.user', $user -> id) }} class="btn btn-action btn-secondary">Detail</a></td>
+                          <td><a href={{route('delete.user', $user -> id) }} class="btn btn-action btn-danger">Delete</a></td>
                         </tr>
                         @endforeach
-                        <tr>
-                          <td>2</td>
-                          <td>Hasan Basri</td>
-                          <td>2017-01-09</td>
-                          <td><div class="badge badge-success">Active</div></td>
-                          <td><a href="#" class="btn btn-action btn-secondary">Detail</a></td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>Kusnadi</td>
-                          <td>2017-01-11</td>
-                          <td><div class="badge badge-danger">Not Active</div></td>
-                          <td><a href="#" class="btn btn-action btn-secondary">Detail</a></td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>Rizal Fakhri</td>
-                          <td>2017-01-11</td>
-                          <td><div class="badge badge-success">Active</div></td>
-                          <td><a href="#" class="btn btn-action btn-secondary">Detail</a></td>
-                        </tr>
+                        
                       </table>
                     </div>
                   </div>

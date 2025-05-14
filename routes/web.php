@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TestController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -40,15 +41,22 @@ Route::get('/contact', function () {
      Route::get('/table', function(){
         return view('admin.table');
      });
-     Route::post('/addproduct',[MainController::class,'addProductController']);
      Route::get('/addproduct', function(){
          return view('admin.addproduct');
       });
+     Route::post('/addproduct',[MainController::class,'addProductController']);
+     
  });
  Route::fallback(function(){
     return view('/admin/404');
 
  });
 
- Route::get('/showuser',[UserController::class,'showUser']);
+ Route::get('/showuser',[UserController::class,'showUser'])->name('show.user');
  Route::get('/singleuser/{id}',[UserController::class,'singleUser'])->name('view.user');
+
+ Route::get('/adduser', function(){
+         return view('admin.addproduct');
+ });
+ Route::post('/adduser',[UserController::class,'addUser'])->name('add.user');
+ Route::get('/deleteuser/{id}',[UserController::class,'deleteUser'])->name('delete.user');

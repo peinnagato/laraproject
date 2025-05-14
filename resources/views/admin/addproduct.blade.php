@@ -11,50 +11,32 @@
             </div>
 
             <div class="card card-primary">
-              <div class="card-header"><h4>Add product</h4></div>
+              <div class="card-header"><h4>Add User</h4></div>
 
               <div class="card-body">
-                <form method="POST" action="/admin/addproduct">
-                  {{ csrf_field() }}
-                
+                <form method="POST" action={{route('add.user')}}>
+                  @csrf
                   <div class="row">
                     <div class="form-group col-6">
-                      <label for="frist_name">Product Name</label>
-                      <input id="frist_name" type="text" class="form-control" name="frist_name" autofocus>
+                      <label for="frist_name">Name</label>
+                      <input id="frist_name" type="text" class="form-control" name="name" autofocus>
                     </div>
                     <div class="form-group col-6">
-                      <label for="last_name">Price</label>
-                      <input id="last_name" type="number" class="form-control" name="last_name">
+                      <label for="last_name">Email</label>
+                      <input id="last_name" type="email" class="form-control" name="email">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="email">Email</label>
-                    <textarea id="email"  class="form-control" name="email"> </textarea>
+                    <label for="email">Password</label>
+                    <input type="password"  class="form-control" name="password">
                     <div class="invalid-feedback">
                     </div>
                   </div>
 
-                  
-
-                  
-                  <div class="row">
-                    <div class="form-group col-6">
-                      <label>Category</label>
-                      <select class="form-control">
-                        <option>Shoes</option>
-                        <option>Tops</option>
-                        <option>Bottoms</option>
-                        
-                      </select>
-                    </div>
-                    
-                  </div>
-                  
-
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">
-                      Add Product
+                      Add User
                     </button>
                   </div>
                 </form>
