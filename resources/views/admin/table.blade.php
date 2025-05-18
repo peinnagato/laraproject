@@ -22,7 +22,9 @@
                           <th>Name</th>
                           <th>Created At</th>
                           <th>Email</th>
-                          <th>Action</th>
+                          <th>View</th>
+                          <th>Delete</th>
+                          <th>Update</th>
                         </tr>
                          @foreach($users as $id => $user)
                         <tr>
@@ -32,10 +34,13 @@
                           <td>{{$user->email}}</td>
                           <td><a href={{route('view.user', $user -> id) }} class="btn btn-action btn-secondary">Detail</a></td>
                           <td><a href={{route('delete.user', $user -> id) }} class="btn btn-action btn-danger">Delete</a></td>
+                          <td><a href={{route('update.page', $user -> id) }} class="btn btn-action btn-warning">Update</a></td>
+
                         </tr>
                         @endforeach
                         
                       </table>
+                      {{$users->links()}}
                     </div>
                   </div>
                   <div class="card-footer text-right">

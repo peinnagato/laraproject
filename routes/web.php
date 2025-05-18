@@ -60,3 +60,9 @@ Route::get('/contact', function () {
  });
  Route::post('/adduser',[UserController::class,'addUser'])->name('add.user');
  Route::get('/deleteuser/{id}',[UserController::class,'deleteUser'])->name('delete.user');
+
+ Route::controller(UserController::class)->group(function(){
+ Route::get('/updateuser/{id}','updateUser')->name('update.page');
+  Route::post('/updateuser/{id}','updateSingleUser')->name('update.user');
+ });
+

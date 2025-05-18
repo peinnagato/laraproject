@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function showUser(){
-        $users= DB::table('users')->get();
+        $users= DB::table('users')->paginate(3);
         // dd($users);
         // foreach($users as $user){
         //     echo $user->name."</br>";
@@ -45,4 +45,28 @@ class UserController extends Controller
         $users = DB::table('users')->where('id',$id)->delete();
         return redirect()->route('show.user');
     }
+
+    public function updateUser(string $id){
+        // $users = DB::table('users')->where('id',$id)->get();
+        $users = DB::table('users')->find($id);
+        return view('admin.updateproduct',compact('users'));
+    }
+
+    public function updateSingleUser(Request $req, $id){
+        $users = DB::table('users')
+        ->where('id',$id)
+        ->update(
+         [
+            'name' => $req->name,
+            'email' => $req->email,
+            'password' => Hash::make($req->password),
+         ]);
+
+         if($users){
+                            return redirect()->route('show.user');
+                        }else{
+                            echo "Data Update Failed";
+                        }
+    }
+    
 }
