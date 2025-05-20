@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "88970a0117c062eed55fa8728fc43833",
+    "content-hash": "fd5b9b4b65a3ba1eeb10b3d528905b8a",
     "packages": [
         {
             "name": "brick/math",
@@ -134,6 +134,65 @@
                 }
             ],
             "time": "2024-02-09T16:56:22+00:00"
+        },
+        {
+            "name": "cixware/esewa-php-sdk",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/remotemerge/esewa-php-sdk.git",
+                "reference": "d71f696c1f5034840d378050c6e419325889cd33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/remotemerge/esewa-php-sdk/zipball/d71f696c1f5034840d378050c6e419325889cd33",
+                "reference": "d71f696c1f5034840d378050c6e419325889cd33",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-simplexml": "*",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.62.0",
+                "phpunit/phpunit": "^10.5.30",
+                "rector/rector": "^1.2.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RemoteMerge\\Esewa\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Madan Sapkota",
+                    "email": "contact+github@madansapkota.com",
+                    "homepage": "https://madansapkota.com"
+                }
+            ],
+            "description": "eSewa payment gateway integration in PHP.",
+            "homepage": "https://github.com/remotemerge/esewa-php-sdk",
+            "keywords": [
+                "api",
+                "esewa",
+                "gateway",
+                "nepal",
+                "payment",
+                "php",
+                "token"
+            ],
+            "support": {
+                "issues": "https://github.com/remotemerge/esewa-php-sdk/issues",
+                "source": "https://github.com/remotemerge/esewa-php-sdk/tree/v3.1.0"
+            },
+            "abandoned": "remotemerge/esewa-php-sdk",
+            "time": "2024-08-24T12:15:00+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -2008,16 +2067,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "3.8.1",
+            "version": "3.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "aef6ee73a77a66e404dd6540934a9ef1b3c855b4"
+                "reference": "10d85740180ecba7896c87e06a166e0c95a0e3b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/aef6ee73a77a66e404dd6540934a9ef1b3c855b4",
-                "reference": "aef6ee73a77a66e404dd6540934a9ef1b3c855b4",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/10d85740180ecba7896c87e06a166e0c95a0e3b6",
+                "reference": "10d85740180ecba7896c87e06a166e0c95a0e3b6",
                 "shasum": ""
             },
             "require": {
@@ -2095,7 +2154,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/3.8.1"
+                "source": "https://github.com/Seldaek/monolog/tree/3.9.0"
             },
             "funding": [
                 {
@@ -2107,7 +2166,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-05T17:15:07+00:00"
+            "time": "2025-03-24T10:02:05+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -3285,6 +3344,64 @@
                 }
             ],
             "time": "2024-04-27T21:32:50+00:00"
+        },
+        {
+            "name": "remotemerge/esewa-php-sdk",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/remotemerge/esewa-php-sdk.git",
+                "reference": "ca55ca791d4fb8eaf07b76b6b6a5fbef71521c9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/remotemerge/esewa-php-sdk/zipball/ca55ca791d4fb8eaf07b76b6b6a5fbef71521c9e",
+                "reference": "ca55ca791d4fb8eaf07b76b6b6a5fbef71521c9e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-simplexml": "*",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.70",
+                "phpunit/phpunit": "^10.5",
+                "rector/rector": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RemoteMerge\\Esewa\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Madan Sapkota",
+                    "email": "contact+github@madansapkota.com",
+                    "homepage": "https://madansapkota.com"
+                }
+            ],
+            "description": "eSewa payment gateway integration in PHP.",
+            "homepage": "https://github.com/remotemerge/esewa-php-sdk",
+            "keywords": [
+                "api",
+                "esewa",
+                "gateway",
+                "nepal",
+                "payment",
+                "php",
+                "token"
+            ],
+            "support": {
+                "issues": "https://github.com/remotemerge/esewa-php-sdk/issues",
+                "source": "https://github.com/remotemerge/esewa-php-sdk/tree/v3.1.1"
+            },
+            "time": "2025-03-01T12:23:45+00:00"
         },
         {
             "name": "symfony/clock",

@@ -4,20 +4,26 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TestController;
-
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\EsewaController;
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/products/{id}',[MainController::class,'product']);
-Route::get('/products', function () {
-    return view('products');
-});
+Route::get('/products',[ProductController::class,'showproduct']);
 Route::get('/about', function () {
    return view('about');
 });
+
+
+
+Route::get('/singleproduct/{id}',[ProductController::class,'singleProduct'])->name('single.product');
 Route::get('/contact', function () {
    return view('contact');
 });
+
+//Esewa Route
+Route::post('/esewa',[EsewaController::class,'esewaPay'])->name('esewa');  
 
 // Routing through Controller
  Route::get('/index',[TestController::class,'index']);
@@ -62,6 +68,7 @@ Route::get('/contact', function () {
  Route::get('/deleteuser/{id}',[UserController::class,'deleteUser'])->name('delete.user');
 
  Route::controller(UserController::class)->group(function(){
+   
  Route::get('/updateuser/{id}','updateUser')->name('update.page');
   Route::post('/updateuser/{id}','updateSingleUser')->name('update.user');
  });
