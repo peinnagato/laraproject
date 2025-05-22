@@ -35,15 +35,39 @@
               <h4>{{$products->product_name}}</h4>
               <p>{{$products->product_description}}</p>
               <p>{{$products->product_price}}</p>
-              <form method="POST" action={{route('esewa')}}>
+
+      
+      
+
+
+              <form action={{route('esewa2')}} method="POST">
                 @csrf
                 <input type="hidden" value={{$products->id}} name="product_id">
-                <input type="hidden" value=1 name="user_id">
+                <input type="hidden" name="user_id" value='1'>
                 <input type="hidden" value={{$products->product_price}} name="product_amount">
                 
-
-                <input type="submit" value="Pay with Esewa" class="btn btn-primary">
+                {{-- <input type="hidden" id="amount" name="amount" value={{$products->product_price}} required>
+                <input type="hidden" id="tax_amount" name="tax_amount" value ="0" required>
+                <input type="hidden" id="total_amount" name="total_amount" value=110 required>
+                <input type="hidden" id="transaction_uuid" name="transaction_uuid" value="12-df"required>
+                <input type="hidden" id="product_code" name="product_code" value ="EPAYTEST" required>
+                <input type="hidden" id="product_service_charge" name="product_service_charge" value="0" required>
+                <input type="hidden" id="product_delivery_charge" name="product_delivery_charge" value="0" required>
+                <input type="hidden" id="success_url" name="success_url" value="https://developer.esewa.com.np/success" required>
+                <input type="hidden" id="failure_url" name="failure_url" value="https://developer.esewa.com.np/failure" required>
+                <input type="hidden" id="signed_field_names" name="signed_field_names" value="total_amount,transaction_uuid,product_code" required>
+                <input type="text" id="signature" name="signature" value={{$signature}} required> --}}
+                <input type="submit" value="Pay with Esewa">
+              
               </form>
+             
+              {{-- <form method="POST" action="https://rc-epay.esewa.com.np/api/epay/main/v2/form">
+                 @foreach($form_data as $key => $value)
+                <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+                 @endforeach
+                <button type="submit">Pay with eSewa</button>
+                </form> --}}
+
               <ul class="social-icons">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>

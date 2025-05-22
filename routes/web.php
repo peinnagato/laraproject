@@ -6,6 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\EsewaController;
+use App\Http\Controllers\KhaltiPaymentController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,7 +25,18 @@ Route::get('/contact', function () {
 });
 
 //Esewa Route
-Route::post('/esewa',[EsewaController::class,'esewaPay'])->name('esewa');  
+Route::post('/esewa',[EsewaController::class,'initiate'])->name('esewa2');  
+
+Route::get('/success',[EsewaController::class,'esewaSuccess'])->name('gateway.verify.success');
+Route::get('/paymentfail',[EsewaController::class,'esewaFail'])->name('payment.failed');
+Route::get('/payment/success', [EsewaController::class, 'verifySuccess'])->name('payment.success');
+
+//Khalti Route
+Route::post('/khalti/initiate', [KhaltiPaymentController::class, 'initiatePayment'])->name('esewa');
+Route::get('/payment/callback', [KhaltiPaymentController::class, 'paymentCallback']);
+Route::get('/payment/lookup', [KhaltiPaymentController::class, 'verifyPayment'])->name('khalti.lookup');
+Route::get('/returnurl', [KhaltiPaymentController::class,'retunrUrl']);
+
 
 // Routing through Controller
  Route::get('/index',[TestController::class,'index']);
